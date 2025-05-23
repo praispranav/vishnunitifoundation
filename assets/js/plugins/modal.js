@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
       const city = document.getElementById("city").value;
-      const vaccine = document.getElementById("vaccine").checked;
-      const mothersDay = document.getElementById("mother").checked;
+      const vaccine = document.getElementById("vaccine")?.checked;
+      const mothersDay = document.getElementById("mother")?.checked;
       const phone = document.getElementById("phone").value;
       if (vaccine && phone.length === 10) {
         const url = `https://cervical.praispranav.com/generate-certificate-mobile?name=${encodeURIComponent(
