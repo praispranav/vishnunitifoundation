@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const city = document.getElementById("city").value;
       const vaccine = document.getElementById("vaccine")?.checked;
       const mothersDay = document.getElementById("mother")?.checked;
+      const elderAbuse = document.getElementById("elder-abuse")?.checked;
       const phone = document.getElementById("phone").value;
       if (vaccine && phone.length === 10) {
         const url = `https://cervical.praispranav.com/generate-certificate-mobile?name=${encodeURIComponent(
@@ -79,6 +80,65 @@ document.addEventListener("DOMContentLoaded", function () {
           phone
         )}`;
         const url2 = `https://cervical.praispranav.com/generate-certificate-mothers-day?name=${encodeURIComponent(
+          name
+        )}&city=${encodeURIComponent(city)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(
+          phone
+        )}`;
+        if (window.innerWidth > 1000) {
+          window.open(url2, "_blank");
+          $("#myModal").hide();
+          $("#exampleModal").hide();
+          const backdrops = document.getElementsByClassName("modal-backdrop");
+          const backdropsArray = Array.from(backdrops);
+
+          backdropsArray.forEach((backdrop) => {
+            if (backdrop.parentNode) {
+              backdrop.parentNode.removeChild(backdrop);
+            }
+          });
+        } else {
+          function downloadCertificate(name, additionalText) {
+            fetch(url, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              responseType: "blob",
+              body: JSON.stringify({}),
+            })
+              .then((response) => response.blob())
+              .then((blob) => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `certificate_${name}.pdf`;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+              })
+              .catch((error) => console.error("Error:", error));
+          }
+          downloadCertificate(name);
+          $("#myModal").hide();
+          $("#exampleModal").hide();
+          const backdrops = document.getElementsByClassName("modal-backdrop");
+          const backdropsArray = Array.from(backdrops);
+
+          backdropsArray.forEach((backdrop) => {
+            if (backdrop.parentNode) {
+              backdrop.parentNode.removeChild(backdrop);
+            }
+          });
+        }
+      }
+
+      if (elderAbuse && phone.length === 10) {
+        const url = `https://cervical.praispranav.com/generate-certificate-elder-abuse-mobile?name=${encodeURIComponent(
+          name
+        )}&city=${encodeURIComponent(city)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(
+          phone
+        )}`;
+        const url2 = `https://cervical.praispranav.com/generate-certificate-elder-abuse?name=${encodeURIComponent(
           name
         )}&city=${encodeURIComponent(city)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(
           phone
