@@ -202,13 +202,15 @@
                   value="Taken Cervical Cancer Vaccine">
                 <label class="form-check-label" for="vaccine">Taken Cervical Cancer Vaccine</label>
               </div> -->
-              <div class="mb-3 form-check">
+              <!-- <div class="mb-3 form-check">
                   <input required type="radio" name="certificate" class="form-check-input" id="elder-abuse"
                     value="World Elder Abuse Awareness">
                   <label class="form-check-label" for="elder-abuse">World Elder Abuse Awareness</label>
-                </div>              
-            <button type="submit" id="submitBtn" class="btn submit-btn text-white w-100">Submit</button>
-          </form>
+                </div>    -->
+                <div id="dynamic-radio-group"></div>
+           
+                <button type="submit" id="submitBtn" class="btn submit-btn text-white w-100">Submit</button>
+                  </form>
         </div>
       </div>
     </div>
@@ -1764,7 +1766,7 @@ padding: 19px;" id="auto-open-modal-button" data-bs-toggle="modal" data-bs-targe
     <script src="assets/js/plugins/Splitetext.js"></script>
     <script src="assets/js/plugins/lightbox.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/plugins/modal.js"></script>
+    <script type="module" src="assets/js/plugins/modal.js"></script>
     <script>
         window.onload = function () {
             var modal = document.getElementById("myModal");
