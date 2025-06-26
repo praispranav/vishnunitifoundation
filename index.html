@@ -85,7 +85,7 @@
                             </div>
                             <div class="btn-area4">
                                 <p id="myBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                    class="header-btn1 btn-purple btn-purple">Take A Pledge <span><i
+                                    class="open-pledge-modal header-btn1 btn-purple btn-purple">Take A Pledge <span><i
                                             class="fa-solid fa-arrow-right"></i></span></p>
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                 <div class="vl-about-btn">
                     <div class="btn-area4 hash-has-sub">
                         <p id="myBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                            class="header-btn1 btn-purple btn-purple">Take A Pledge <span><i
+                            class="open-pledge-modal header-btn1 btn-purple btn-purple">Take A Pledge <span><i
                                     class="fa-solid fa-arrow-right"></i></span></p>
                     </div>
                 </div>
@@ -158,61 +158,64 @@
     </div>
 
     <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Pledge Form</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Pledge Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body w-100">
+                    <form novalidate class="needs-validation" id="pledgeForm">
+                        <div class="mb-3" id="field-name">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Please enter your name.
+                            </div>
+                        </div>
+                        <div class="mb-3 d-none" id="field-email">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                        <div class="mb-3" id="field-phone">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" id="phone" class="form-control" pattern="[0-9]{10}" required
+                                title="Phone number should be 10 digits">
+                            <div class="invalid-feedback">
+                                Please enter a 10-digit phone number.
+                            </div>
+                        </div>
+                        <div class="mb-3" id="field-city">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" name="city" id="city" class="form-control" required>
+                        </div>
+                        <!-- <div class="mb-3 form-check">
+                <input required type="radio" name="certificate" class="form-check-input" id="mother"
+                  value="Celebrate Mother's Day">
+                <label class="form-check-label" for="mother">Celebrate Mother's Day</label>
+              </div> -->
+                        <!-- <div class="mb-3 form-check">
+                <input required type="radio" name="certificate" class="form-check-input" id="vaccine"
+                  value="Taken Cervical Cancer Vaccine">
+                <label class="form-check-label" for="vaccine">Taken Cervical Cancer Vaccine</label>
+              </div> -->
+                        <!-- <div class="mb-3 form-check">
+                  <input required type="radio" name="certificate" class="form-check-input" id="elder-abuse"
+                    value="World Elder Abuse Awareness">
+                  <label class="form-check-label" for="elder-abuse">World Elder Abuse Awareness</label>
+                </div>    -->
+                        <div id="dynamic-radio-group"></div>
+
+                        <button type="submit" id="submitBtn" class="btn submit-btn text-white w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="modal-body w-100">
-          <form novalidate class="needs-validation">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" id="name" required>
-              <div class="invalid-feedback">
-                Please enter your name.
-              </div>
-            </div>
-            <div class="mb-3 d-none">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" id="email" required>
-              <div class="invalid-feedback">
-                Please enter a valid email address.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="phone" class="form-label">Phone</label>
-              <input type="tel" id="phone" pattern="[0-9]{10}" required title="Phone number should be 10 digits">
-              <div class="invalid-feedback">
-                Please enter a 10-digit phone number.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="city" class="form-label">City</label>
-              <input type="text" name="city" id="city" required>
-            </div>
-            <!-- <div class="mb-3 form-check">
-              <input required type="radio" name="certificate" class="form-check-input" id="mother"
-                value="Celebrate Mother's Day">
-              <label class="form-check-label" for="mother">Celebrate Mother's Day</label>
-            </div> -->
-            <!-- <div class="mb-3 form-check">
-              <input required type="radio" name="certificate" class="form-check-input" id="vaccine"
-                value="Taken Cervical Cancer Vaccine">
-              <label class="form-check-label" for="vaccine">Taken Cervical Cancer Vaccine</label>
-            </div> -->
-            <div class="mb-3 form-check">
-                <input required type="radio" name="certificate" class="form-check-input" id="elder-abuse"
-                  value="World Elder Abuse Awareness">
-                <label class="form-check-label" for="elder-abuse">World Elder Abuse Awareness</label>
-              </div>              
-            <button type="submit" class="btn text-white submit-btn w-100">Submit</button>
-          </form>
-        </div>
-      </div>
     </div>
-  </div>
 
     <!-- Auto Open in Start Modal  -->
     <div id="myModal" class="modal">
@@ -224,7 +227,7 @@
             <h1 class="modal-heading">Welcome to VISHUNITI</h1>
             <p class="modal-subheading">Choose the Cause you Believe in...</p>
             <button onclick="myfunc()" id="auto-open-modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                class="modal-btn d-none d-lg-block">Take A Pledge</button>
+                class="open-pledge-modal modal-btn d-none d-lg-block">Take A Pledge</button>
             <button onclick="myfunc()" style="margin: 10px;
 white-space: nowrap;
 padding: 19px;" id="auto-open-modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal"
@@ -236,312 +239,8 @@ padding: 19px;" id="auto-open-modal-button" data-bs-toggle="modal" data-bs-targe
 
 
     <!-- banner section start -->
-    <div class="baner4-active" style="background-image: url(assets/img/banner/vl-home-bg-4.png);">
+    <div class="baner4-active" id="slider" style="background-image: url(assets/img/banner/vl-home-bg-4.png);">
         <!-- single slide item -->
-
-        <div class="vl-banner4">
-            <div class="shape2"><img src="assets/img/icons/vl-home-arrow-4.2.svg" alt=""></div>
-            <div class="shape3"><img src="assets/img/shape/hand-shape4.1.png" alt=""></div>
-            <div class="shape"><img src="assets/img/icons/vl-home-arrow-4.1.svg" alt=""></div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="banner-content ">
-                            <!-- <h4 class="subtitle"> <span><img src="assets/img/icons/vl-white-hand4.1.svg" alt=""></span> Focusing on Safety & Support</h4> -->
-                            <br>
-                            <h1 class="title pt-5">HPV Vaccination: Protecting today's youth for a cancer-free tomorrow.
-                            </h1>
-                            <p class="para pb-32">Invest your future: HPV Vaccination, safeguarding against Cervical
-                                Cancers.
-                            </p>
-                            <!-- btn area -->
-                            <div class="btn-flex-area d-none">
-                                <div class="btn-area4 ">
-                                    <a href="contact.html" class="header-btn1 btn-purple btn-purple">Spread Kindness
-                                        <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                </div>
-                                <div class="vl-video-play">
-                                    <a href="https://www.youtube.com/watch?v=HkYGxh1XUGQ"
-                                        class="video-play-button video popup-video" tabindex="-1">
-                                        <span></span>
-                                    </a>
-                                    <div class="video-text">
-                                        <h6 class="vtitle video">
-                                            <a class="vtitle video popup-video"
-                                                href="https://www.youtube.com/watch?v=HkYGxh1XUGQ">How We Work</a>
-
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="vl-banner-thumb" style="top: 150px;">
-                                    <img src="assets/img/banner/5.png" alt=""
-                                        style="height: 530px;width: 630px; padding: 80px 20px 20px 20px">
-                                </div>
-                                <div class="col-lg-12">
-                                    <h4 class="para pb-32" style="position: absolute;
-                                top: 6150px;
-                                padding: 0 20px;
-                                color: #fff;
-                                transition: 1500ms;">Celebrating 1100 + HPV Vaccinations !</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- single slide item -->
-        <div class="vl-banner4">
-            <div class="shape2"><img src="assets/img/icons/vl-home-arrow-4.2.svg" alt=""></div>
-            <div class="shape3"><img src="assets/img/shape/hand-shape4.1.png" alt=""></div>
-            <div class="shape"><img src="assets/img/icons/vl-home-arrow-4.1.svg" alt=""></div>
-
-            <div class="container">
-                <div class="row ps-4">
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="vl-banner-thumb" style="top: 150px;">
-                                    <img src="assets/img/banner/1.webp" alt=""
-                                        style="height: 530px;width: 630px; padding: 80px 20px 20px 20px">
-                                </div>
-                                <div class="col-lg-12">
-                                    <h4 class="para pb-32" style="position: absolute;
-                                top: 680px;
-                                padding: 0 20px;
-                                color: #fff;
-                                transition: 1500ms;">The Career Counselling and Guidance Session</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="banner-content ">
-                            <!-- <h4 class="subtitle"> <span><img src="assets/img/icons/vl-white-hand4.1.svg" alt=""></span> Focusing on Safety & Support</h4> -->
-                            <br>
-                            <h1 class="title pt-5">Sanctuary of Support, Growing with Vishuniti Foundation</h1>
-                            <p class="para pb-32">Where gentle hands weave a sanctuary, and hearts find a safe harbor.
-                            </p>
-                            <!-- btn area -->
-                            <div class="btn-flex-area d-none">
-                                <div class="btn-area4 ">
-                                    <a href="contact.html" class="header-btn1 btn-purple btn-purple">Spread Kindness
-                                        <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                </div>
-                                <div class="vl-video-play">
-                                    <a href="https://www.youtube.com/watch?v=HkYGxh1XUGQ"
-                                        class="video-play-button video popup-video" tabindex="-1">
-                                        <span></span>
-                                    </a>
-                                    <div class="video-text">
-                                        <h6 class="vtitle video">
-                                            <a class="vtitle video popup-video"
-                                                href="https://www.youtube.com/watch?v=HkYGxh1XUGQ">How We Work</a>
-
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- single slide item -->
-        <div class="vl-banner4">
-            <div class="shape2"><img src="assets/img/icons/vl-home-arrow-4.2.svg" alt=""></div>
-            <div class="shape3"><img src="assets/img/shape/hand-shape4.1.png" alt=""></div>
-            <div class="shape"><img src="assets/img/icons/vl-home-arrow-4.1.svg" alt=""></div>
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="banner-content ">
-                            <!-- <h4 class="subtitle"> <span><img src="assets/img/icons/vl-white-hand4.1.svg"
-                                    alt=""></span>Focusing on Empowerment & Fulfillment</h4> -->
-                            <br>
-                            <h1 class="title pt-5 text-anime-style-3">Empowering Your Potential, Flourishing with
-                                Vishuniti Foundation
-                            </h1>
-                            <p class="para pb-32">A garden where your potential blooms, and your spirit finds its wings.
-                            </p>
-                            <!-- btn area -->
-                            <div class="btn-flex-area d-none">
-                                <div class="btn-area4">
-                                    <a href="contact.html" class="header-btn1 btn-purple btn-purple">Spread Kindness
-                                        <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                </div>
-                                <div class="vl-video-play">
-                                    <a href="https://www.youtube.com/watch?v=HkYGxh1XUGQ"
-                                        class="video-play-button video popup-video" tabindex="-1">
-                                        <span></span>
-                                    </a>
-                                    <div class="video-text">
-                                        <h6 class="vtitle video"><a class="vtitle video popup-video"
-                                                href="https://www.youtube.com/watch?v=HkYGxh1XUGQ">How We Work</a></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="vl-banner-thumb" style="top: 150px;">
-                                    <img class="" src="assets/img/banner/2.webp" alt=""
-                                        style="height: 530px;width: 630px; padding: 80px 20px 20px 20px">
-                                </div>
-                                <div class="col-lg-12">
-                                    <h4 class="para pb-32" style="position: absolute;
-                                top: 680px;
-                                padding: 0 20px;
-                                color: #fff;
-                                transition: 1500ms;">Group's GoTrade program. Our focus is Empowering and uplifting
-                                        women by equipping them with essential skills in negotiation and go-to-market
-                                        strategy.</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-
-        <!-- single slide item learn now-->
-        <div class="vl-banner4">
-            <div class="shape2"><img src="assets/img/icons/vl-home-arrow-4.2.svg" alt=""></div>
-            <div class="shape3"><img src="assets/img/shape/hand-shape4.1.png" alt=""></div>
-            <div class="shape"><img src="assets/img/icons/vl-home-arrow-4.1.svg" alt=""></div>
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="vl-banner-thumb" style="top: 150px;">
-                                    <img src="assets/img/banner/6.png" alt=""
-                                        style="height: 530px; padding: 80px 20px 20px 20px">
-                                </div>
-                                <div class="col-lg-12">
-                                    <h4 class="para pb-32" style="position: absolute;
-                                top: 680px;
-                                padding: 0 20px;
-                                color: #fff;
-                                transition: 1500ms;">Online learning and teaching marketplace with <br> 50+ job
-                                        oriented courses & 5K students. <br> Taught by experts to help you acquire new
-                                        skills.</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="banner-content ">
-                            <!-- <h4 class="subtitle"> <span><img src="assets/img/icons/vl-white-hand4.1.svg"
-                                    alt=""></span>Focusing on Empowerment & Fulfillment</h4> -->
-                            <br>
-                            <h1 class="title pt-5 text-anime-style-3">Limitless learning at your fingertips with
-                                LearnNow Academy
-                            </h1>
-                            <p class="para pb-32"> Working on Bharat App, India own facebook, twitter, instagram,
-                                youtube & whatsapp.
-                            </p>
-                            <!-- btn area -->
-                            <div class="btn-flex-area d-none">
-                                <div class="btn-area4">
-                                    <a href="contact.html" class="header-btn1 btn-purple btn-purple">Spread Kindness
-                                        <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                </div>
-                                <div class="vl-video-play">
-                                    <a href="https://www.youtube.com/watch?v=HkYGxh1XUGQ"
-                                        class="video-play-button video popup-video" tabindex="-1">
-                                        <span></span>
-                                    </a>
-                                    <div class="video-text">
-                                        <h6 class="vtitle video"><a class="vtitle video popup-video"
-                                                href="https://www.youtube.com/watch?v=HkYGxh1XUGQ">How We Work</a></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- single slide item -->
-        <div class="vl-banner4" style="margin-top:25px">
-            <div class="shape2"><img src="assets/img/icons/vl-home-arrow-4.2.svg" alt=""></div>
-            <div class="shape3"><img src="assets/img/shape/hand-shape4.1.png" alt=""></div>
-            <div class="shape"><img src="assets/img/icons/vl-home-arrow-4.1.svg" alt=""></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="banner-content ">
-                            <!-- <h4 class="subtitle"> <span><img src="assets/img/icons/vl-white-hand4.1.svg"
-                                    alt=""></span>Focusing on Happiness & Community</h4> -->
-                            <br>
-                            <h1 class="title pt-5 text-anime-style-3">Cultivating Happiness, Living Joyfully with
-                                Vishuniti Foundation
-                            </h1>
-                            <p class="para pb-32">A symphony of shared joy, where every note resonates with happiness.
-                            </p>
-
-                            <!-- btn area -->
-                            <div class="btn-flex-area d-none">
-                                <div class="btn-area4">
-                                    <a href="contact.html" class="header-btn1 btn-purple btn-purple">Spread Kindness
-                                        <span><i class="fa-solid fa-arrow-right"></i></span></a>
-                                </div>
-                                <div class="vl-video-play">
-                                    <a href="https://www.youtube.com/watch?v=HkYGxh1XUGQ"
-                                        class="video-play-button video popup-video" tabindex="-1">
-                                        <span></span>
-                                    </a>
-                                    <div class="video-text">
-                                        <h6 class="vtitle video"><a class="vtitle video popup-video"
-                                                href="https://www.youtube.com/watch?v=HkYGxh1XUGQ">How We Work</a></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="vl-banner-thumb" style="top: 150px;">
-                                    <img src="assets/img/banner/4.webp" alt=""
-                                        style="height: 530px; padding: 80px 20px 20px 20px">
-                                </div>
-                                <div class="col-lg-12">
-                                    <h4 class="para pb-32" style="position: absolute;
-                                top: 680px;
-                                padding: 0 20px;
-                                color: #fff;
-                                transition: 1500ms;">Senior Citizens Club in Gurgaon & Dehradun an initiative started
-                                        to help elders engage and discuss problems as well as look at their wellness &
-                                        preventive health</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- banner section end -->
 
@@ -1761,7 +1460,7 @@ padding: 19px;" id="auto-open-modal-button" data-bs-toggle="modal" data-bs-targe
     <script src="assets/js/plugins/Splitetext.js"></script>
     <script src="assets/js/plugins/lightbox.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/plugins/modal.js"></script>
+    <script type="module" src="assets/js/plugins/modal.js"></script>
     <script>
         window.onload = function () {
             var modal = document.getElementById("myModal");
@@ -1794,6 +1493,9 @@ padding: 19px;" id="auto-open-modal-button" data-bs-toggle="modal" data-bs-targe
             document.getElementById("close-btn-auto-popup-modal").click();
         });
     </script>
+
+    <script type="module" src="assets/js/api/formControl.js"></script>
+    <script type="module" src="assets/js/api/slideControl.js"></script>
 
 </body>
 
