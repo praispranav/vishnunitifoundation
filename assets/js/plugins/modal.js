@@ -7,13 +7,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function downloadCertificate(url, name) {
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({}),
-    })
+    // fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({}),
+    // })
+    fetch(url)
       .then((res) => res.blob())
       .then((blob) => {
         const blobUrl = window.URL.createObjectURL(blob);
